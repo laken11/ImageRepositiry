@@ -26,7 +26,10 @@ class OwnerSerializer(serializers.Serializer):
         return Owner.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        pass
+        instance.info = validated_data.get('info', instance.info)
+        instance.user_id = validated_data.get('user_id', instance.info)
+        instance.save()
+        return instance
 
 
 class ImageSerializer(serializers.Serializer):

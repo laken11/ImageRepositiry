@@ -13,6 +13,7 @@ class EditOwnerDto:
     last_name: str
     email: str
     username: str
+    owner_info: str
 
 
 class ListOwnerDto:

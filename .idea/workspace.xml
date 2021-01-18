@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7915c3c3-c251-4bf9-babb-d56d0d3e76b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/photos/dan-gold-N7RiDzfF2iw-unsplash.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_repository/Dto/OwnerDto.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_repository/Dto/OwnerDto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_repository/repositories/OwnerRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_repository/repositories/OwnerRepository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_repository/views/Owner/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_repository/views/Owner/view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_repository/views/Image/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_repository/views/Image/view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +120,7 @@
       <workItem from="1610921732797" duration="3119000" />
       <workItem from="1610925968383" duration="731000" />
       <workItem from="1610962075514" duration="1766000" />
-      <workItem from="1610968035469" duration="783000" />
+      <workItem from="1610968035469" duration="1145000" />
     </task>
     <servers />
   </component>

@@ -69,7 +69,7 @@ def image_details(request, image_id):
                 else:
                     return Response(status=HTTP_400_BAD_REQUEST)
             except Exception:
-                raise AttributeError
+                raise NotFound
         else:
             return Response(status=HTTP_401_UNAUTHORIZED)
 
@@ -83,7 +83,7 @@ def image_details(request, image_id):
                 else:
                     return Response(status=HTTP_400_BAD_REQUEST)
             except Exception:
-                raise AttributeError
+                raise NotFound
         else:
             return Response(status=HTTP_401_UNAUTHORIZED)
 
