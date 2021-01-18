@@ -1,10 +1,15 @@
 # ImageRepository
-The requirments needed to run this aplication are specifed in the reqirements.txt file
-The database for the application is hosted on a live server
-create a dirctory photos in the root directory
-The application only allows registered users to create Image objectc. Register Through own/owner/
-Create an Image Object through the endpoint Ima/create_image/, authentication is needed to create an Image and it is done through the endpoint api-token-auth/ by sending owner username and password to this endpoit and specifying The Authentication Token in the header like this "Authentication: Token: --the token--
-Images sre search through endpoint search/<tag of image>
-An image is Delete after authenticating through the endpoint image_details/<image_id>
-An image is gotten through endpoint get_image/<image name>
-Use postman to test the end points
+The application should be tested with Postman
+All dependency required by the application are listed in the reqirements.txt file
+To create an Image object, User need to register through the endpoint host/own/owner. Fields needed are username, email, password, confirm_password, first_name, last_name then owner_info
+When attempting to create or delete an image authentication is need.
+The database for the Application is hosted on a live server
+ENDPOINTS:
+  create image: host/img/create_image/ (with POST request, required fields are tag, name, image, description with optional fields tag2, tag3)
+  search image: host/img/search/<image_tag>( with GET reguest)
+  image_edit: host/img/image_details/<image_id> (with PUT request, required fields are tag, name, image, description with optional fields tag2, tag3)
+  delete_image: host/img/image_details/<image_id> (with DELETE request)
+  get_image: host/img/get_image/<name> (with GET request)
+  autenticate: host/api-token-auth/ (with POST request, required fields are username, password. An authentication token is generated which is added to the headers with            Authentication as the key and Token <token generated> as value and sent were required in a request.
+  register_user: host/own/owner (with POST request, required fields listed above)
+  
