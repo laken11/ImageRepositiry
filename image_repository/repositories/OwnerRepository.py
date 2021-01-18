@@ -1,3 +1,5 @@
+from django.contrib.auth.models import User
+
 from image_repository.Dto.OwnerDto import *
 from abc import ABCMeta, abstractmethod
 
@@ -19,12 +21,13 @@ class OwnerRepository(metaclass=ABCMeta):
 class DjangoOwnerRepository(OwnerRepository):
     def register_owner(self, model: RegisterOwnerDto):
         errors = []
+        user = User.objects.create_user(username=model.username, email=model.email, password=model.password)
+        user.first_name = model.first_name
+        user.last_name = model.last_name
+        user_id = user.id
         data = {
-            'first_name': model.first_name,
-            'last_name': model.last_name,
-            'email': model.email,
-            'password': model.password,
-            'username': model.username
+            'user_id': user_id,
+            'info': model.owner_info
         }
         serializer = OwnerSerializer(data=data)
         if serializer.is_valid():

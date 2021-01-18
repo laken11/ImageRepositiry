@@ -5,6 +5,7 @@ class RegisterOwnerDto:
     password: str
     confirm_password: str
     username: str
+    owner_info: str
 
 
 class EditOwnerDto:

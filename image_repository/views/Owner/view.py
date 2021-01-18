@@ -14,7 +14,7 @@ def owner(request):
         image_owner = __get_attribute_from_request(request)
         if image_owner.password == image_owner.password:
             owner = app_service_provider.owner_management_service().register_owner(image_owner)
-            if owner is []:
+            if not owner:
                 return Response(status=HTTP_200_OK)
             else:
                 return Response(owner, status=HTTP_400_BAD_REQUEST)
@@ -35,17 +35,19 @@ def edit_owner(request, owner_id):
 
 def __get_attribute_from_request(request):
     register_owner_dto = RegisterOwnerDto()
-    register_owner_dto.username = request.data['username']
+    register_owner_dto.username = request.data.get('username', '')
     __set_attribute_from_request(request, register_owner_dto)
     return register_owner_dto
 
 
 def __set_attribute_from_request(request, register_owner_dto):
-    register_owner_dto.email = request.data['email']
-    register_owner_dto.last_name = request.data['last_name']
-    register_owner_dto.first_name = request.data['first_name']
-    register_owner_dto.password = request.data['password']
-    register_owner_dto.confirm_password = request.data['confirm_password']
+    register_owner_dto.email = request.data.get('email', '')
+    register_owner_dto.last_name = request.data.get('last_name', '')
+    register_owner_dto.first_name = request.data.get('first_name', '')
+    register_owner_dto.password = request.data.get('password', '')
+    register_owner_dto.confirm_password = request.data.get('confirm_password', '')
+    register_owner_dto.owner_info = request.data.get('owner_info', '')
+
 
 def __get_attribute_from_request_edit(request):
     edit_owner_dto = EditOwnerDto()
